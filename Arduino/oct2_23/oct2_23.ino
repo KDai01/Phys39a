@@ -39,6 +39,10 @@ void loop() {
   //Serial.print(durationSeconds, 2);
   //Serial.print(,);
   Serial.println(temperatureCelsius, 2);
+  Serial.print("resistance ");
+  Serial.println(resistance);
+  Serial.print("thermV ");
+  Serial.println(thermVolt);
 
   // Print the results
   // Serial.print("Duration (s): ");
@@ -50,5 +54,5 @@ void loop() {
   //int outputPotent = map(inputPotent, 0, 1023, 0, 255);
   //analogWrite(6,outputPotent);
   
-  delay(50);
+  delay(500);
 }

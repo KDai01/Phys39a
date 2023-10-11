@@ -25,11 +25,11 @@ const int numMeasurements = 5000;  // Number of measurements
 
 // Fixed resistor value in ohms
 // const float fixedResistance = 4670.0; // my board
-const float fixedResistance = 2000.0; // board in 39 lab
+const float fixedResistance = 1600.0; // board in 39 lab
 
-// Thermistor parameters for 100k ohm 
-const float beta = 4540.0;
-const float R25 = 100000.0;
+// Thermistor parameters for 2.2k ohm 
+const float beta = 3560.0;
+const float R25 = 2200.0;
 const float T0 = 298.15;  // 25°C in Kelvin
 int  pwmValue = 0;
 int  HeatCool = 1;

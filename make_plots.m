@@ -1,4 +1,4 @@
-dataLow = readmatrix("Kp=14.5_Ki=0.06started_high_T_Tset=35.txt");
+dataLow = readmatrix("Kp=14.7_Ki=0.07_trial1.txt");
 dataLow = dataLow';
 
 dataMed = readmatrix("Kp=15_Ki=0.23_second_data.txt");
@@ -15,9 +15,9 @@ y = zeros(length(t),1) + 35;
 
 hold on;
 
-plot(dataLow(3, 20:end), dataLow(1, 20:end),'DisplayName','Ki=0.06');
+plot(dataLow(3, 20:end), dataLow(1, 20:end),'DisplayName','Ki=0.07');
 plot(dataMed(3, 20:end), dataMed(1, 20:end),'DisplayName','Ki=0.23');
-plot(dataMed2(3, 20:end), dataMed(1, 20:end),'DisplayName','Ki=1.14');
+plot(dataMed2(3, 20:end), dataMed2(1, 20:end),'DisplayName','Ki=1.14');
 plot(dataHigh(3, 20:end), dataHigh(1, 20:end),'DisplayName','Ki=2.00');
 plot(t,y,'DisplayName','Set T');
 

@@ -8,7 +8,8 @@ data = np.loadtxt(file_path, delimiter='\t')
 
 # Extracting relevant columns
 time = data[:, 2]  # Assuming the time column is at index 2
-thermistor_data = data[:, 5:]  # Assuming the thermistor columns start from index 4
+thermistor_data = data[:, 4:]  # Assuming the thermistor columns start from index 4
+#print(thermistor_data[0])
 
 # Function for fitting the oscillating temperature
 def oscillating_temperature(t, A, B, omega, epsilon):
@@ -19,6 +20,7 @@ num_thermistors = thermistor_data.shape[1]
 p0 = (45, 11, .0525, 1.5)  # Initial guess for parameters (A, B, omega, epsilon)
 
 params_list = []
+
 
 plt.figure(figsize=(12, 8))
 
@@ -35,12 +37,15 @@ for i in range(num_thermistors):
     plt.title(f'Thermistor {i + 1}')
     plt.legend()
 
+    print(f'Thermistor {i + 1} parameters: {params_i}')
+
 plt.tight_layout()
 plt.show()
 
 # Extract parameters for each thermistor
 params_array = np.array(params_list)
 
+"""
 # Calculate q, q', and epsilon
 # Replace the formulas below with your actual expressions
 q = np.sqrt(1.0 / 2.0)  # Placeholder value, replace with your formula
@@ -77,3 +82,5 @@ plt.xlabel('Omega')
 plt.ylabel('q\'/q')
 plt.legend()
 plt.show()
+
+"""

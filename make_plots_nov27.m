@@ -6,14 +6,18 @@ pwm = data(2, :);
 time = data(3, :);
 setTemp = data(4, :);
 
-%Set bounds on x-axis; steady-state occurs ~1056-1129
-xStart = 22; % minimum 1, t=30 secs; control starts at 22
-xEnd = 1133; % maximum 1794, t=1918 secs; control ends at 1129
+%Set bounds on x-axis for plots
+xStart = 22; % 
+xEnd = 1133; % 
 
 hold on;
 
 %Plot the base temperature
-plot(time(xStart:end),baseTemp(xStart:end),'DisplayName','Set Temp');
+plot(time(xStart:end),baseTemp(xStart:end),'DisplayName','Base Temp');
+
+%Plot the set temperature
+plot(time(xStart:end),setTemp(xStart:end),'DisplayName','Set Temp');
+
 
 %Plot all the temperatures along the rod
 %for i = 5:9
@@ -22,7 +26,8 @@ plot(time(xStart:end),baseTemp(xStart:end),'DisplayName','Set Temp');
 
 xlabel('Time (s)');
 ylabel('Temp (C)');
-title('Temp vs Time along rod');
-legend('Set Temp','Temp1','Temp2','Temp3','Temp4','Temp5','Location','best');
+title('Base Temp Response vs Time');
+%legend('Set Temp','Temp1','Temp2','Temp3','Temp4','Temp5','Location','best');
+legend('Base Temp', 'Set Temp','Location','best');
 
 hold off;

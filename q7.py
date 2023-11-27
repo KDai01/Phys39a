@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 
 # Load data from the text file
-file_path = 'Tset45_T=60_A=10.txt'
+file_path = 'Tset45_120secPeriod_q7_data.txt'
 data = np.loadtxt(file_path, delimiter='\t')
 
 # Extracting relevant columns
@@ -16,7 +16,7 @@ def oscillating_temperature(t, A, B, omega, epsilon):
 
 # Fit the data for each thermistor
 num_thermistors = thermistor_data.shape[1]
-p0 = (20.0, 1.0, 1.0, 0.0)  # Initial guess for parameters (A, B, omega, epsilon)
+p0 = (45, 11, .0525, 1.5)  # Initial guess for parameters (A, B, omega, epsilon)
 
 params_list = []
 
@@ -30,8 +30,8 @@ for i in range(num_thermistors):
 
     # Plot the data and fits for each thermistor
     plt.subplot(2, 3, i + 1)
-    plt.scatter(time, thermistor_i_data, label=f'Thermistor {i + 1} Data')
-    plt.plot(time, oscillating_temperature(time, *params_i), label='Fit')
+    plt.scatter(time, thermistor_i_data, marker='o', color='red', label=f'Thermistor {i + 1} Data')
+    plt.plot(time, oscillating_temperature(time, *params_i), 'b--',label='Fit')
     plt.title(f'Thermistor {i + 1}')
     plt.legend()
 

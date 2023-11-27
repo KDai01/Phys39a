@@ -17,7 +17,7 @@ def oscillating_temperature(t, A, B, omega, epsilon):
 
 # Fit the data for each thermistor
 num_thermistors = thermistor_data.shape[1]
-p0 = (45, 11, .0525, 1.5)  # Initial guess for parameters (A, B, omega, epsilon)
+p0 = (37.8, 2.9, .0525, 1.5)  # Initial guess for parameters (A, B, omega, epsilon)
 
 params_list = []
 

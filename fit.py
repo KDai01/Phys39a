@@ -24,8 +24,8 @@ x_fit = np.linspace(min(x_data), max(x_data), 100)
 y_fit = decay_function(x_fit, a_fit, b_fit)
 
 # Plot the original data and the fitted curve
-plt.scatter(x_data, y_data, label='Original Data')
-plt.plot(x_fit, y_fit, label='Fitted Curve', color='red')
+plt.plot(x_data, y_data, marker='o', linestyle='-', label='Original Experimental Data')
+plt.plot(x_fit, y_fit, label='Theoretical Curve Using Fitted Value', color='red')
 plt.legend()
 plt.xlabel('Height (m)')
 plt.ylabel('Temperature over ambient (C)')
